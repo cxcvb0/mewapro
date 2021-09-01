@@ -1,0 +1,21 @@
+{
+  "token": "",
+  "mongourl": "mongodb://localhost:27017",
+  "prefix": "?",
+  "ownerID": "214745840080650240",
+  "embedColor": "#00ff00",
+  "whitelist": ["518906820727799808", "295208519693762560", "168123402781982720"],
+  "blacklist": ["581123884833570820"],
+  "mewaAvatar": "https://i.imgur.com/RbfVyiQ.jpg",
+  "myAvatar": "https://i.imgur.com/fFLYuSK.png",
+  "bmApi": {
+    "base": "https://api.battlemetrics.com/servers?filter[search]",
+    "filter": "filter[game]=rust&sort=rank&page[size]=100"
+  },
+  "nodes": [
+    {
+      "host": "localhost",
+      "password": "youshallnotpass"
+    }
+  ]
+}
