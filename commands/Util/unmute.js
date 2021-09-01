@@ -1,4 +1,4 @@
-const { handleMute } = require('../../util/functions')
+const { handleMute } = require('../../utils/functions')
 
 module.exports = {
   name: 'unmute',
