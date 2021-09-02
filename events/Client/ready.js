@@ -8,5 +8,5 @@ module.exports = async (client) => {
     'ready',
   )
 
-  client.user.setActivity('Mewa', { type: 'PLAYING' })
+  client.user.setActivity('with Mewa', { type: 'PLAYING' })
 }

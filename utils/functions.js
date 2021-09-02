@@ -15,6 +15,12 @@ const getEmbed = () =>
     .setAuthor('Mewa Bot', mewaAvatar)
     .setFooter('Made with 🖤 by xyz', myAvatar)
 
+const musicCommandAllowed = (channel, source) => {
+  if (!channel) return [false, getEmbed().setDescription('Music channel is not set')]
+  else if (source !== channel) return [false, null]
+  else return [true, null]
+}
+
 const parseServerData = ({
   attributes: { id, name, ip, port, players, maxPlayers, status, country, details },
 }) => {
@@ -87,4 +93,5 @@ module.exports = {
   fetchServer,
   handleMultipleServerResults,
   handleOneServerResult,
+  musicCommandAllowed,
 }

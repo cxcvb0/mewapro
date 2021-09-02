@@ -1,5 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 const { convertTime } = require('../../utils/convert.js')
+const { musicCommandAllowed } = require('../../utils/functions')
 
 module.exports = {
   name: 'play',
@@ -14,6 +15,11 @@ module.exports = {
   inVoiceChannel: true,
   sameVoiceChannel: false,
   execute: async (message, args, client, prefix) => {
+    const musicChannel = await client.db.get(`music_${message.guild.id}`)
+    const [allowed, embedResponse] = musicCommandAllowed(musicChannel, message.channel.id)
+    if (!allowed && embedResponse) return message.channel.send({ embeds: [embedResponse] })
+    if (!allowed) return
+
     const { channel } = message.member.voice
     var player = message.client.manager.get(message.guild.id)
 
